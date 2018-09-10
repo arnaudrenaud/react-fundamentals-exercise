@@ -13,14 +13,10 @@ class Instructions extends Component {
   }
 
   renderItems() {
-    let itemsRendered = []
-    for (let i = 0; i < this.props.items.length; i += 1) {
-      const item = this.props.items[i]
-      if (item.length >= 3) {
-        const itemFormatted = i % 2 === 1 ? item : item.toUpperCase()
-        itemsRendered.push(<li key={i}>{itemFormatted}</li>)
-      }
-    }
+    const itemsRendered = this.props.items
+      .filter(item => item.length >= 3)
+      .map((item, i) => (i % 2 ? item : item.toUpperCase()))
+      .map((item, i) => <li key={i}>{item}</li>)
     return <ul>{itemsRendered}</ul>
   }
 
