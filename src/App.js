@@ -7,7 +7,10 @@ class App extends Component {
     return (
       <div className="app">
         <h1>Hello World!</h1>
-        <Instructions shouldDisplayImage={false} />
+        <Instructions
+          items={['lol', 'funny', 'ha']}
+          shouldDisplayImage={false}
+        />
       </div>
     )
   }
