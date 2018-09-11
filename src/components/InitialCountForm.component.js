@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 class InitialCountForm extends Component {
-  setInitialCount(event) {
+  setInitialCount = event => {
     event.preventDefault()
     const data = new FormData(event.target)
     const initialCount = parseInt(data.get('initialCount'), 10)

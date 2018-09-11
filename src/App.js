@@ -27,7 +27,10 @@ class App extends Component {
           shouldDisplayImage={false}
         />
         <InitialCountForm setCount={this.setInitialCount} />
-        <Counter count={this.state.initialCount} />
+        <Counter
+          count={this.state.initialCount}
+          setCount={this.setInitialCount}
+        />
       </div>
     )
   }
