@@ -6,8 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      initialCount: 0,
-      isValid: true
+      initialCount: 0
     }
 
     this.setInitialCount = this.setInitialCount.bind(this)
@@ -17,10 +16,8 @@ class App extends Component {
     event.preventDefault()
     const data = new FormData(event.target)
     const initialCount = parseInt(data.get('initialCount'), 10)
-    const isValid = Number.isInteger(initialCount)
     this.setState({
-      initialCount,
-      isValid
+      initialCount
     })
   }
 
@@ -33,8 +30,7 @@ class App extends Component {
           shouldDisplayImage={false}
         />
         <form onSubmit={this.setInitialCount}>
-          {!this.state.isValid ? <label>Please enter a number</label> : null}
-          <input name="initialCount" type="text" />
+          <input name="initialCount" type="number" />
           <input type="submit" />
         </form>
         <Counter count={this.state.initialCount} />
